@@ -48,4 +48,4 @@ src/features/   기능별 모듈
 docs/           설계 문서
 ```
 
-모듈 구성은 [docs/modules.md](docs/modules.md)를 봅니다.
+모듈 구성은 [docs/modules.md](docs/modules.md)를 봅니다. 건물별 CCTV 연동 문의처는 [docs/cctv-contacts.md](docs/cctv-contacts.md)를 봅니다.
