@@ -1,4 +1,4 @@
-// 1차 후보 30곳. 규모는 공개 자료 기준이고, 민간 건물은 대부분 주거를 포함한 건물 전체 대수다.
+// 1차 후보 30곳. 대수는 공개 자료의 전체 규모이고 실시간 값이 아니다. 민간 건물은 대부분 주거를 포함한다.
 export type LotGroup = "공영" | "공공시설" | "민간";
 export type PositionAccuracy = "건물" | "근처";
 
@@ -10,8 +10,7 @@ export type ParkingLot = {
   spaces: number | null;
   spacesNote: string;
   sourceUrl: string;
-  // null 이면 정확한 위치를 아직 못 찾아 지도에 찍지 않는다.
-  position: { lat: number; lng: number; accuracy: PositionAccuracy } | null;
+  position: { lat: number; lng: number; accuracy: PositionAccuracy };
 };
 
 const CAUC = "https://www.cauc.or.kr/_parking/main.asp?no=1";
@@ -40,12 +39,12 @@ export const PARKING_LOTS: ParkingLot[] = [
   { id: "sky-tower", name: "SKY타워빌딩", group: "민간", address: "검은들1길 26", spaces: 163, spacesNote: "건물 전체", sourceUrl: ZIPPOOM, position: { lat: 36.81187, lng: 127.11067, accuracy: "건물" } },
   { id: "buldang-1", name: "불당 제1주차장", group: "공영", address: "검은들1길 15", spaces: 144, spacesNote: "유료, 24시간", sourceUrl: CAUC, position: { lat: 36.81097, lng: 127.10995, accuracy: "근처" } },
   { id: "dm-centum", name: "디엠센텀시티", group: "민간", address: "불당25로 236", spaces: 139, spacesNote: "건물 전체", sourceUrl: "https://zippoom.com/review/ApBwo6mtxLbODTnLuStYDg", position: { lat: 36.82195, lng: 127.11024, accuracy: "건물" } },
-  { id: "buldang-5", name: "불당 제5주차장", group: "공영", address: "불당25로 154 (W타워)", spaces: 128, spacesNote: "유료, 24시간. 2021년 기사는 136면", sourceUrl: CAUC, position: null },
-  { id: "buldang-3", name: "불당 제3주차장", group: "공영", address: "불당동 910", spaces: 57, spacesNote: "무료", sourceUrl: CAUC, position: null },
-  { id: "buldang-2", name: "불당 제2주차장", group: "공영", address: "불당동 735", spaces: 49, spacesNote: "유료, 24시간. 170면 주차타워 계획 있음", sourceUrl: CAUC, position: null },
-  { id: "buldang-4", name: "불당 제4주차장", group: "공영", address: "불당동 970", spaces: 28, spacesNote: "무료", sourceUrl: CAUC, position: null },
+  { id: "buldang-5", name: "불당 제5주차장", group: "공영", address: "불당25로 154", spaces: 128, spacesNote: "유료, 24시간. 2021년 기사는 136면", sourceUrl: CAUC, position: { lat: 36.81492, lng: 127.10795, accuracy: "근처" } },
+  { id: "buldang-2", name: "불당 제2주차장", group: "공영", address: "검은들3길 3 (불당동 735)", spaces: 49, spacesNote: "유료, 24시간. 170면 주차타워 계획 있음", sourceUrl: CAUC, position: { lat: 36.81054, lng: 127.11109, accuracy: "근처" } },
   { id: "cityhall", name: "천안시청", group: "공공시설", address: "번영로 156", spaces: 344, spacesNote: "공유누리 등록 수용 대수", sourceUrl: "https://www.eshare.go.kr/UserPortal/Upv/UprResrcFacl/index.do?rsrc_no=BA10A0015155", position: { lat: 36.81514, lng: 127.11403, accuracy: "건물" } },
   { id: "on-city-hotel", name: "오엔시티호텔", group: "민간", address: "불당4로 105", spaces: null, spacesNote: "대수 미확인, 비투숙객 이용 조건 미확인", sourceUrl: "https://www.ktriptips.com/kor/stay/2595037", position: { lat: 36.81113, lng: 127.11137, accuracy: "건물" } },
   { id: "no-brand", name: "노브랜드 천안불당점", group: "민간", address: "불당19로 95", spaces: null, spacesNote: "대수 미확인, 구매 시 1시간 무료", sourceUrl: "https://emartapp.emart.com/branch/view.do?id=1664", position: { lat: 36.81646, lng: 127.10299, accuracy: "건물" } },
   { id: "gng-tower", name: "지앤지홀딩스타워 (씨네큐)", group: "민간", address: "불당33길 28", spaces: null, spacesNote: "대수 미확인, 관람 시 4시간 무료", sourceUrl: "https://mobile.cineq.co.kr/Home/Theater/4101", position: { lat: 36.81142, lng: 127.10776, accuracy: "근처" } },
+  { id: "park-1", name: "파크푸르지오 1단지 상가", group: "민간", address: "불당26로 144", spaces: 332, spacesNote: "단지 전체로 추정, 상가동 38대 표기도 있음", sourceUrl: "https://realty.daangn.com/articles/4065831", position: { lat: 36.82098, lng: 127.1085, accuracy: "건물" } },
+  { id: "buldang23-70", name: "불당23로 70 근린상가", group: "민간", address: "불당23로 70", spaces: 90, spacesNote: "매물 정보의 건물 대수, 건물명 미확인", sourceUrl: "https://realty.daangn.com/articles/4036778", position: { lat: 36.81765, lng: 127.10884, accuracy: "건물" } },
 ];

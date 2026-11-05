@@ -6,9 +6,9 @@
 ## 1차 개발 목표
 
 1. 네이버 지도를 웹 화면에 띄운다. (완료)
-2. 규모가 큰 주차장부터 후보 30곳을 조사해 지도에 표시한다. (완료, 위치 미확인 4곳 제외)
+2. 규모가 큰 주차장부터 후보 30곳을 조사해 지도에 표시한다. (완료)
 
-혼잡도는 아직 수집하지 않아 화면의 신호 색은 예시입니다. 화면 시안은 `/mockups` 에서 볼 수 있습니다.
+주차 대수는 공개 자료의 전체 규모입니다. 실시간 정보와 혼잡도는 아직 없습니다.
 
 ## 기술 스택
 
@@ -31,11 +31,17 @@ npm run dev
 
 브라우저에서 http://localhost:3000 을 엽니다.
 
+## 공개 주소
+
+https://joonyo3.dothome.co.kr/trafficmap/
+
+`npm run build` 로 만든 `out/` 폴더를 서버의 `/html/trafficmap` 에 올립니다.
+
 ## 네이버 지도 Client ID 발급
 
 1. [네이버 클라우드 플랫폼 콘솔](https://console.ncloud.com)에서 Maps > Application 으로 이동해 애플리케이션을 등록합니다.
 2. API 선택에서 **Dynamic Map** 을 고릅니다. 고르지 않으면 429 오류가 납니다.
-3. Web 서비스 URL에 `http://localhost:3000` 을 등록합니다.
+3. Web 서비스 URL에 `http://localhost:3000` 과 운영 주소를 등록합니다.
 4. 발급된 Client ID를 `.env.local` 에 넣습니다.
 
 `.env.local` 은 깃에 올리지 않습니다. Client Secret은 이 프로젝트의 지도 표시에 쓰지 않으니 저장소에 넣지 마세요.
