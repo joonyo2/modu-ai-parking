@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+
+# 키가 들어가는 파일은 올리지 않는다. 예시는 .env.example
+.env
+.env.*
+!.env.example
