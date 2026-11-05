@@ -1,4 +1,4 @@
-// 1차 후보 30곳. 대수는 공개 자료의 전체 규모이고 실시간 값이 아니다. 민간 건물은 대부분 주거를 포함한다.
+// 1차 후보 32곳. 대수는 공개 자료의 전체 규모이고 실시간 값이 아니다. 민간 건물은 대부분 주거를 포함한다.
 export type LotGroup = "공영" | "공공시설" | "민간";
 export type PositionAccuracy = "건물" | "근처";
 
@@ -47,4 +47,6 @@ export const PARKING_LOTS: ParkingLot[] = [
   { id: "gng-tower", name: "지앤지홀딩스타워 (씨네큐)", group: "민간", address: "불당33길 28", spaces: null, spacesNote: "대수 미확인, 관람 시 4시간 무료", sourceUrl: "https://mobile.cineq.co.kr/Home/Theater/4101", position: { lat: 36.81142, lng: 127.10776, accuracy: "근처" } },
   { id: "park-1", name: "파크푸르지오 1단지 상가", group: "민간", address: "불당26로 144", spaces: 332, spacesNote: "단지 전체로 추정, 상가동 38대 표기도 있음", sourceUrl: "https://realty.daangn.com/articles/4065831", position: { lat: 36.82098, lng: 127.1085, accuracy: "건물" } },
   { id: "buldang23-70", name: "불당23로 70 근린상가", group: "민간", address: "불당23로 70", spaces: 90, spacesNote: "매물 정보의 건물 대수, 건물명 미확인", sourceUrl: "https://realty.daangn.com/articles/4036778", position: { lat: 36.81765, lng: 127.10884, accuracy: "건물" } },
+  { id: "buldang-3", name: "불당 제3주차장", group: "공영", address: "불당동 910", spaces: 57, spacesNote: "무료", sourceUrl: CAUC, position: { lat: 36.80529, lng: 127.10804, accuracy: "근처" } },
+  { id: "buldang-4", name: "불당 제4주차장", group: "공영", address: "불당동 970", spaces: 28, spacesNote: "무료", sourceUrl: CAUC, position: { lat: 36.80374, lng: 127.10852, accuracy: "근처" } },
 ];
