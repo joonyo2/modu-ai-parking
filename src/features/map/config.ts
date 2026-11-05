@@ -3,5 +3,5 @@ export const SERVICE_AREA = {
   centerName: "불당2동 행정복지센터",
   lat: 36.8173113,
   lng: 127.108753,
-  radiusMeters: 3000,
+  radiusMeters: 1000,
 };
