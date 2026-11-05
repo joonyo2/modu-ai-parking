@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { DEFAULT_ZOOM, SINBULDANG_CENTER } from "./config";
+import { SERVICE_AREA } from "./config";
 import { loadNaverMaps } from "./loadNaverMaps";
 
 declare global {
@@ -37,10 +37,19 @@ export function NaverMap() {
     loadNaverMaps(clientId)
       .then(() => {
         if (cancelled || !containerRef.current) return;
-        map = new naver.maps.Map(containerRef.current, {
-          center: new naver.maps.LatLng(SINBULDANG_CENTER.lat, SINBULDANG_CENTER.lng),
-          zoom: DEFAULT_ZOOM,
+        const center = new naver.maps.LatLng(SERVICE_AREA.lat, SERVICE_AREA.lng);
+        map = new naver.maps.Map(containerRef.current, { center });
+        new naver.maps.Marker({ map, position: center, title: SERVICE_AREA.centerName });
+        const area = new naver.maps.Circle({
+          map,
+          center,
+          radius: SERVICE_AREA.radiusMeters,
+          strokeColor: "#1f6feb",
+          strokeWeight: 2,
+          fillColor: "#1f6feb",
+          fillOpacity: 0.06,
         });
+        map.fitBounds(area.getBounds());
       })
       .catch(() => {
         if (!cancelled) setProblem("load-failed");

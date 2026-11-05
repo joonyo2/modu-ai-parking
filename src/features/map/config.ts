@@ -1,3 +1,7 @@
-// 신불당 상권 부근. 주차장 후보를 조사하면서 중심을 다시 맞춘다.
-export const SINBULDANG_CENTER = { lat: 36.806, lng: 127.106 };
-export const DEFAULT_ZOOM = 16;
+// 서비스 대상 범위. 주소: 천안시 서북구 불당25로 182
+export const SERVICE_AREA = {
+  centerName: "불당2동 행정복지센터",
+  lat: 36.8173113,
+  lng: 127.108753,
+  radiusMeters: 3000,
+};
