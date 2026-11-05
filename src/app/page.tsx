@@ -1,9 +1,5 @@
-import { NaverMap } from "@/features/map/NaverMap";
+import { ParkingMapScreen } from "@/features/parking-lots/ParkingMapScreen";
 
 export default function HomePage() {
-  return (
-    <main style={{ height: "100dvh" }}>
-      <NaverMap />
-    </main>
-  );
+  return <ParkingMapScreen />;
 }
