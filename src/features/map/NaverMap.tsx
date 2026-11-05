@@ -37,13 +37,10 @@ export function NaverMap() {
     loadNaverMaps(clientId)
       .then(() => {
         if (cancelled || !containerRef.current) return;
-        const center = new naver.maps.LatLng(SERVICE_AREA.lat, SERVICE_AREA.lng);
-        map = new naver.maps.Map(containerRef.current, { center });
-        new naver.maps.Marker({ map, position: center, title: SERVICE_AREA.centerName });
-        const area = new naver.maps.Circle({
+        map = new naver.maps.Map(containerRef.current);
+        const area = new naver.maps.Polygon({
           map,
-          center,
-          radius: SERVICE_AREA.radiusMeters,
+          paths: [SERVICE_AREA.boundary.map(({ lat, lng }) => new naver.maps.LatLng(lat, lng))],
           strokeColor: "#1f6feb",
           strokeWeight: 2,
           fillColor: "#1f6feb",
